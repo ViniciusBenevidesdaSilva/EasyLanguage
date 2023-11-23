@@ -11,6 +11,7 @@ package br.edu.cefsa.compiler.parser;
 	import br.edu.cefsa.compiler.abstractsyntaxtree.CommandEscrita;
 	import br.edu.cefsa.compiler.abstractsyntaxtree.CommandAtribuicao;
 	import br.edu.cefsa.compiler.abstractsyntaxtree.CommandDecisao;
+	import br.edu.cefsa.compiler.abstractsyntaxtree.CommandPec;
 	import java.util.ArrayList;
 	import java.util.Stack;
 
@@ -121,6 +122,16 @@ public interface EasyLanguageListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitCmdselecao(EasyLanguageParser.CmdselecaoContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link EasyLanguageParser#cmdpec}.
+	 * @param ctx the parse tree
+	 */
+	void enterCmdpec(EasyLanguageParser.CmdpecContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link EasyLanguageParser#cmdpec}.
+	 * @param ctx the parse tree
+	 */
+	void exitCmdpec(EasyLanguageParser.CmdpecContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link EasyLanguageParser#expr}.
 	 * @param ctx the parse tree
