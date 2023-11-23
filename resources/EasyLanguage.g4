@@ -233,7 +233,6 @@ termoPEC    : 'PEC' AP
                      	  _precoVendaID = _input.LT(-1).getText();
                         } 
                     FP 
-                    SC 
               {
               	EasyVariable varCustoFixo = (EasyVariable)symbolTable.get(_custoFixoID);
               	EasyVariable varCustoVariavel = (EasyVariable)symbolTable.get(_custoVariavelID);

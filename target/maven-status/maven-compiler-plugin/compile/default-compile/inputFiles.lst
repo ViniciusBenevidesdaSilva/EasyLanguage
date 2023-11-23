@@ -10,6 +10,7 @@ C:\Users\HP\Documents\Git\Projetos\Faculdade\Easy Language\src\main\java\br\edu\
 C:\Users\HP\Documents\Git\Projetos\Faculdade\Easy Language\src\main\java\br\edu\cefsa\compiler\datastructures\EasyVariable.java
 C:\Users\HP\Documents\Git\Projetos\Faculdade\Easy Language\src\main\java\br\edu\cefsa\compiler\parser\EasyLanguageBaseListener.java
 C:\Users\HP\Documents\Git\Projetos\Faculdade\Easy Language\src\main\java\br\edu\cefsa\compiler\parser\EasyLanguageLexer.java
+C:\Users\HP\Documents\Git\Projetos\Faculdade\Easy Language\src\main\java\br\edu\cefsa\compiler\abstractsyntaxtree\TermoPec.java
 C:\Users\HP\Documents\Git\Projetos\Faculdade\Easy Language\src\main\java\br\edu\cefsa\compiler\datastructures\EasySymbolTable.java
 C:\Users\HP\Documents\Git\Projetos\Faculdade\Easy Language\src\main\java\br\edu\cefsa\compiler\parser\EasyLanguageListener.java
 C:\Users\HP\Documents\Git\Projetos\Faculdade\Easy Language\src\main\java\br\edu\cefsa\compiler\abstractsyntaxtree\EasyProgram.java
