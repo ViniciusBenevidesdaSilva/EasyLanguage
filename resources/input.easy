@@ -1,18 +1,11 @@
 programa
 
-  numero a, b;
-  texto  t1;
+  numero custoFixo, custoVariavel, precoVenda;
 
-  leia(a);
-  leia(b);
+  leia(custoFixo);
+  leia(custoVariavel);
+  leia(precoVenda);
   
-  a = 16 + 2 * 3 / b;
-  
-  se ( a > b ) {
-     escreva (a);
-  }
-  senao {
-     escreva (b);
-  }
-  
+  PEC(custoFixo, custoVariavel, precoVenda);
+
 fimprog;

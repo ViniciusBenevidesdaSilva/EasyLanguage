@@ -11,6 +11,7 @@ grammar EasyLanguage;
 	import br.edu.cefsa.compiler.abstractsyntaxtree.CommandEscrita;
 	import br.edu.cefsa.compiler.abstractsyntaxtree.CommandAtribuicao;
 	import br.edu.cefsa.compiler.abstractsyntaxtree.CommandDecisao;
+	import br.edu.cefsa.compiler.abstractsyntaxtree.CommandPec;
 	import java.util.ArrayList;
 	import java.util.Stack;
 }
@@ -25,6 +26,9 @@ grammar EasyLanguage;
 	private ArrayList<AbstractCommand> curThread;
 	private Stack<ArrayList<AbstractCommand>> stack = new Stack<ArrayList<AbstractCommand>>();
 	private String _readID;
+        private String _custoFixoID;
+        private String _custoVariavelID;
+        private String _precoVendaID;
 	private String _writeID;
 	private String _exprID;
 	private String _exprContent;
@@ -101,7 +105,8 @@ bloco	: { curThread = new ArrayList<AbstractCommand>();
 cmd		:  cmdleitura  
  		|  cmdescrita 
  		|  cmdattrib
- 		|  cmdselecao  
+ 		|  cmdselecao 
+                |  cmdpec
 		;
 		
 cmdleitura	: 'leia' AP
@@ -173,7 +178,29 @@ cmdselecao  :  'se' AP
                    	}
                    )?
             ;
-			
+cmdpec      : 'PEC' AP
+                    ID { verificaID(_input.LT(-1).getText());
+                     	  _custoFixoID = _input.LT(-1).getText();
+                        } 
+                    VIR
+                    ID { verificaID(_input.LT(-1).getText());
+                     	  _custoVariavelID = _input.LT(-1).getText();
+                        } 
+                    VIR
+                    ID { verificaID(_input.LT(-1).getText());
+                     	  _precoVendaID = _input.LT(-1).getText();
+                        } 
+                    FP 
+                    SC 
+                     
+              {
+              	EasyVariable varCustoFixo = (EasyVariable)symbolTable.get(_custoFixoID);
+              	EasyVariable varCustoVariavel = (EasyVariable)symbolTable.get(_custoVariavelID);
+              	EasyVariable varPrecoVenda = (EasyVariable)symbolTable.get(_precoVendaID);
+              	CommandPec cmd = new CommandPec(varCustoFixo, varCustoVariavel, varPrecoVenda);
+              	stack.peek().add(cmd);
+              }   
+			;			
 expr        :  termo ( 
                         OP  { _exprContent += _input.LT(-1).getText();}
                         termo
