@@ -1,11 +1,14 @@
 programa
 
-  numero custoFixo, custoVariavel, precoVenda;
+  numero custoFixo, custoVariavel, precoVenda, pec;
 
   leia(custoFixo);
   leia(custoVariavel);
   leia(precoVenda);
   
   PEC(custoFixo, custoVariavel, precoVenda);
+  pec = PEC(custoFixo, custoVariavel, precoVenda);
+
+  escreva(pec);
 
 fimprog;

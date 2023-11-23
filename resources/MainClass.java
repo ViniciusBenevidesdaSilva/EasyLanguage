@@ -5,8 +5,11 @@ public class MainClass{
 double  custoVariavel;
 double  precoVenda;
 double  custoFixo;
+double  pec;
 custoFixo= _key.nextDouble();
 custoVariavel= _key.nextDouble();
 precoVenda= _key.nextDouble();
 System.out.println(custoFixo/(precoVenda-custoVariavel));
+pec = custoFixo/(precoVenda-custoVariavel);
+System.out.println(pec);
  }}

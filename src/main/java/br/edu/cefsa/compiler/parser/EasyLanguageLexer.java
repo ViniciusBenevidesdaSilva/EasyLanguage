@@ -12,6 +12,7 @@ package br.edu.cefsa.compiler.parser;
 	import br.edu.cefsa.compiler.abstractsyntaxtree.CommandAtribuicao;
 	import br.edu.cefsa.compiler.abstractsyntaxtree.CommandDecisao;
 	import br.edu.cefsa.compiler.abstractsyntaxtree.CommandPec;
+	import br.edu.cefsa.compiler.abstractsyntaxtree.TermoPec;
 	import java.util.ArrayList;
 	import java.util.Stack;
 

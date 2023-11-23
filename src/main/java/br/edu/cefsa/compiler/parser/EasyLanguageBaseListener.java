@@ -12,6 +12,7 @@ package br.edu.cefsa.compiler.parser;
 	import br.edu.cefsa.compiler.abstractsyntaxtree.CommandAtribuicao;
 	import br.edu.cefsa.compiler.abstractsyntaxtree.CommandDecisao;
 	import br.edu.cefsa.compiler.abstractsyntaxtree.CommandPec;
+	import br.edu.cefsa.compiler.abstractsyntaxtree.TermoPec;
 	import java.util.ArrayList;
 	import java.util.Stack;
 
@@ -183,6 +184,18 @@ public class EasyLanguageBaseListener implements EasyLanguageListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitTermo(EasyLanguageParser.TermoContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterTermoPEC(EasyLanguageParser.TermoPECContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitTermoPEC(EasyLanguageParser.TermoPECContext ctx) { }
 
 	/**
 	 * {@inheritDoc}

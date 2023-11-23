@@ -12,6 +12,7 @@ grammar EasyLanguage;
 	import br.edu.cefsa.compiler.abstractsyntaxtree.CommandAtribuicao;
 	import br.edu.cefsa.compiler.abstractsyntaxtree.CommandDecisao;
 	import br.edu.cefsa.compiler.abstractsyntaxtree.CommandPec;
+	import br.edu.cefsa.compiler.abstractsyntaxtree.TermoPec;
 	import java.util.ArrayList;
 	import java.util.Stack;
 }
@@ -215,9 +216,32 @@ termo	    : ID { verificaID(_input.LT(-1).getText());
               {
               	_exprContent += _input.LT(-1).getText();
               }
-			;
+            |
+              termoPEC
+    			;	
 			
-	
+termoPEC    : 'PEC' AP
+                    ID { verificaID(_input.LT(-1).getText());
+                     	  _custoFixoID = _input.LT(-1).getText();
+                        } 
+                    VIR
+                    ID { verificaID(_input.LT(-1).getText());
+                     	  _custoVariavelID = _input.LT(-1).getText();
+                        } 
+                    VIR
+                    ID { verificaID(_input.LT(-1).getText());
+                     	  _precoVendaID = _input.LT(-1).getText();
+                        } 
+                    FP 
+                    SC 
+              {
+              	EasyVariable varCustoFixo = (EasyVariable)symbolTable.get(_custoFixoID);
+              	EasyVariable varCustoVariavel = (EasyVariable)symbolTable.get(_custoVariavelID);
+              	EasyVariable varPrecoVenda = (EasyVariable)symbolTable.get(_precoVendaID);
+              	TermoPec termo = new TermoPec(varCustoFixo, varCustoVariavel, varPrecoVenda);
+              	_exprContent += termo.generateJavaCode();
+              }   
+                        ;
 AP	: '('
 	;
 	
