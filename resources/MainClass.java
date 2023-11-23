@@ -2,14 +2,14 @@ import java.util.Scanner;
 public class MainClass{ 
  public static void main(String args[]){
    Scanner _key = new Scanner(System.in);
-double  custoVariavel;
-double  precoVenda;
-double  custoFixo;
-double  pec;
-custoFixo= _key.nextDouble();
-custoVariavel= _key.nextDouble();
-precoVenda= _key.nextDouble();
-System.out.println(custoFixo/(precoVenda-custoVariavel));
-pec = custoFixo/(precoVenda-custoVariavel);
-System.out.println(pec);
+double  result;
+double  variableCost;
+double  fixedCost;
+double  priceSale;
+fixedCost= _key.nextDouble();
+variableCost= _key.nextDouble();
+priceSale= _key.nextDouble();
+System.out.println(fixedCost/(priceSale-variableCost));
+result = fixedCost/(priceSale-variableCost);
+System.out.println(result);
  }}
